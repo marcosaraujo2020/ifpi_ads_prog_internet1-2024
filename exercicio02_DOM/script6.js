@@ -44,13 +44,30 @@ function adicionar(){
     if(nomeHastag == ""){
         mensagemError('mensagemErro2', 'Campo vazio.');
     }
-    else if (length.nomeHastag < 2){
-        mensagemError('mensagemErro2', 'Hastag com menos de 2 caractere.');
-    }
     
     else {
-        selectElement.appendChild(newOption);
-    } 
-    
-    teste.innerHTML = length.nomeHastag
+        
+        let existeHashtag = false;
+
+        for (var i=0; i < selectElement.children.length; i++){
+            if (nomeHastag.toLowerCase() === selectElement.children[i].textContent.toLowerCase()){
+                existeHashtag = true;
+                break;
+            }
+        }
+        if (existeHashtag) {
+            mensagemError('mensagemErro2', 'Hastag já existente.');
+        } else {
+            if (nomeHastag.length < 2){
+                mensagemError('mensagemErro2', 'Hastag com menos de 2 caracteres.');
+            }
+            else if (selectElement.children.length > 5) {
+                mensagemError('mensagemErro2', 'A lista já possui 5 hastags.');
+            }
+            else {
+                selectElement.appendChild(newOption);
+            }
+        }     
+    }
 }
+
