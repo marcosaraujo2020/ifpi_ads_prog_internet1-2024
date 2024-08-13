@@ -37,6 +37,7 @@ function selecionar(){
 function adicionar(){
     var nomeHastag = document.getElementById('nomeHastag').value.trim();
     const selectElement = document.getElementById('hastags');
+    var teste = document.getElementById('teste');
     var newOption = document.createElement('option');
     newOption.text = nomeHastag;
 
@@ -49,7 +50,7 @@ function adicionar(){
     
     else {
         selectElement.appendChild(newOption);
-    }
+    } 
     
-    
+    teste.innerHTML = length.nomeHastag
 }
