@@ -1,0 +1,35 @@
+
+
+.oculto {
+    display: none;
+}
+
+#mensagemErro {
+    color: rgb(184, 6, 6);
+    text-align: center;
+    margin-top: 10px;
+    height: 30px;
+    background-color: rgb(240, 104, 104, 0.5);
+}
+
+
+
+#mensagemConfirmacao {
+    color: rgb(5, 128, 60);
+    text-align: center;
+    margin-top: 10px;
+    height: 30px;
+    background-color: rgba(114, 243, 157, 0.5);
+
+}
+
+#resultadoTaxa {
+    background-color: rgb(165, 228, 165);
+    width: 300px;
+    margin-top: 20px;
+}
+
+
+#btnErro, #botaoExibir, #calcularTaxa {
+    cursor: pointer;;
+}
