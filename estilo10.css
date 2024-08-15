@@ -1,0 +1,27 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    display: flex;
+}
+
+.select-one, .select-two{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: space-around;
+}
+
+#ativosDisponiveis, #carteiraInvestimentos{
+    margin-top: 10px;
+    width: 220px;
+    height: 210px;
+}
