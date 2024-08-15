@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
     
     document.getElementById('enviarBtn').addEventListener('click', selecionar);
-
     document.getElementById('btnAdicionar').addEventListener('click', adicionar);
+    document.getElementById('btnRemover').addEventListener('click', remover);
 
 
 });
@@ -69,5 +69,21 @@ function adicionar(){
             }
         }     
     }
+}
+
+function remover(){
+    let hastags = document.getElementById('hastags');
+    let teste = document.getElementById('teste')
+    let collection = hastags.selectedOptions;
+
+    if(collection.length == 0){
+        mensagemError('mensagemErro2', 'Não há # selecionada.');;
+    }
+    else{
+        hastags.removeChild(collection[0])
+    }
+   
+    teste.innerHTML = "Removido #"+ collection[0].textContent
+
 }
 
