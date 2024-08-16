@@ -15,10 +15,23 @@ body{
 
 .buttons{
     display: flex;
-    flex-direction: column;
-    margin: 20px;
+    flex-direction: column; 
     justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
+#moverParaDireitaBtn:hover, #moverParaEsquerdaBtn:hover{
+    cursor: pointer;
+    background-color: rgb(189, 176, 176);
+    
+}
+
+#moverParaDireitaBtn:disabled:hover, #moverParaEsquerdaBtn:disabled:hover{
+    cursor: not-allowed; 
+    background-color: white;
+}
+
 
 #ativosDisponiveis, #carteiraInvestimentos{
     margin-top: 10px;
