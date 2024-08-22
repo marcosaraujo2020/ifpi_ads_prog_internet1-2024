@@ -24,15 +24,14 @@ function moverDireita(ativosDisponiveis, carteiraInvestimentos, collectionDispon
     if(collectionDisponiveis.length == 0){
         alert("Nenhum disponível selecionado")
     }
-    else{
-        
+    else{   
         carteiraInvestimentos.appendChild(ativosDisponiveis.removeChild(collectionDisponiveis[0]))
     }
     
     if(ativosDisponiveis.childElementCount == 0){
         btnDireita.disabled = true;
     }
-    else if(carteiraInvestimentos.childElementCount != 0){
+    if(carteiraInvestimentos.childElementCount != 0){
         btnEsquerda.disabled=false;
     } 
 }
@@ -40,12 +39,13 @@ function moverDireita(ativosDisponiveis, carteiraInvestimentos, collectionDispon
 
 function moverEsquerda(ativosDisponiveis, carteiraInvestimentos,collectionInvestimentos,btnDireita, btnEsquerda){
     
-     if(collectionInvestimentos.length == 0){
+    if(collectionInvestimentos.length == 0){
         alert("Nenhum investimento selecionado")
     }
     else{
         ativosDisponiveis.appendChild(carteiraInvestimentos.removeChild(collectionInvestimentos[0]))
     }
+    
     if(carteiraInvestimentos.childElementCount == 0){
         btnEsquerda.disabled = true;
     }
