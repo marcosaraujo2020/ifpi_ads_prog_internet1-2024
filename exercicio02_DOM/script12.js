@@ -3,31 +3,29 @@ document.addEventListener('DOMContentLoaded', function(){
     var descricaoTarefa = document.getElementById('descricaoTarefa');
     var adicionarBtn = document.getElementById('adicionarBtn');
     var teste = document.getElementById('teste')
-    const listaTarefas = new Array;
-   // var tabelaTarefas = document.getElementById('tabelaTarefas');
-   
-    adicionarBtn.addEventListener('click', function(){
-        var resultado = criarTarefa(descricaoTarefa, listaTarefas);
-        if(resultado.length>0){
-            teste.innerHTML = resultado[2].id + " : " + resultado[2].descricao + "<br>" + "Tabanho da lista: " + resultado.length
-        }
-    });
+    let listaTarefas = new Array;
+    var tabelaTarefas = document.getElementById('tabelaTarefas');
+    var conteudo = document.getElementById('conteudo');
+    var tarefa = new Object();
+    var dataAtual = new Date;
     
-    
-    var n = 1;
+    var n = 1;  
     function gerarId(){
         return n++
     }
+    
+    adicionarBtn.addEventListener('click', function(){
+        criarTarefa(descricaoTarefa);   
+    });
+    
+  
  
-
-    function criarTarefa(descricaoTarefa, listaTarefas){
+    function criarTarefa(descricaoTarefa){
         
         if(descricaoTarefa.value == ""){
             alert('Preencha o campo descrição');
         }else{
-            var tarefa = new Object();
-            var dataAtual = new Date;
-           
+            
             tarefa.id = gerarId();
             tarefa.descricao = descricaoTarefa.value;
             tarefa.dataInicio = dataAtual
@@ -37,16 +35,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
             document.getElementById('descricaoTarefa').value = "";
 
-            //return listaTarefas;
             adicionarLinha(listaTarefas);
         }
-        
-       
-    }
+    };
 
     function adicionarLinha(listaTarefas){
         
-        var linha = document.getElementById('data-id');
         var novaLinha = document.createElement('tr');
         
         var concluirBtn = document.createElement('button');
@@ -70,20 +64,25 @@ document.addEventListener('DOMContentLoaded', function(){
             cell3.innerText = element.dataInicio
             cell4.innerText = element.dataConclusao
             cell5.appendChild(concluirBtn);
-            cell5.appendChild(excluirBtn); 
+            cell5.appendChild(excluirBtn);
+            novaLinha.setAttribute('data-id', element.id);
+            concluirBtn.addEventListener('click', concluirTarefa);
+            excluirBtn.addEventListener('click', excluirTarefa); 
         });
 
-        novaLinha.append(cell1);
-        novaLinha.append(cell2);
-        novaLinha.append(cell3);
-        novaLinha.append(cell4);
-        novaLinha.append(cell5);
+        novaLinha.append(cell1,cell2,cell3,cell4,cell5);
+        conteudo.append(novaLinha)
+        
+    };
 
-        linha.append(novaLinha)
-        
-        
-    
-    }
+    function concluirTarefa(){
+       alert("Tarefa concluída!!")
+    };
+
+    function excluirTarefa(){
+       const lin = excluirBtn.parentNode.parentNode;
+       lin.remove()
+    };
 
 });
 

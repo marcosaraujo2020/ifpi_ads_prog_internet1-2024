@@ -7,34 +7,33 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('botaoExibir').addEventListener('click', exibirConteudo);
 
 
-    var numeroInteracoes = document.getElementById('numeroInteracoes').value;
-    var numeroVisualizacoes = document.getElementById('numeroVisualizacoes').value;
+    var numeroInteracoes = document.getElementById('numeroInteracoes');
+    var numeroVisualizacoes = document.getElementById('numeroVisualizacoes');
 
     document.getElementById('calcularTaxa').addEventListener('click', function(){
         var resultadoTaxa = document.getElementById('resultadoTaxa');
-        var resultadoFinal = (parseFloat(numeroInteracoes/numeroVisualizacoes)*100).toFixed(2);
+        var resultadoFinal = (parseFloat(numeroInteracoes.value/numeroVisualizacoes.value)*100).toFixed(2);
 
-        if (resultadoFinal < 0){
-            mensagemError('mensagemErro', 'Valor inválido')
+        if(isNaN(numeroInteracoes.value.trim() && numeroVisualizacoes.value.trim())){
+            mensagemError('mensagemErro', 'Valor inválido, digite uma número')
         }
         else{
             resultadoTaxa.innerHTML = "Taxa de Engajamento: " + "<strong>" + resultadoFinal + "</strong>" + " %";
         }
+
     });
 
     document.getElementById('btnCarregar').addEventListener('click', carregarImagem);
     document.querySelector('#logos').addEventListener('change', selecionarImagem);
 
-   
-    
 
 });
 
 function exibirConteudo(){
-    var conteudo = document.getElementById('caixaDeTexto').value;
-    conteudo.trim();
+    var conteudo = document.getElementById('caixaDeTexto').value.trim();
+    //conteudo.trim();
      
-    if(conteudo==0){
+    if(conteudo==""){
         mensagemError('mensagemErro', 'O campo deve ser preenchido.')
     }
     else{

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de APIs</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Blog de APIs</h1>
+        <p>Explore diferentes APIs através deste blog interativo.</p>
+    </header>
+    
+    <main>
+        <!-- Seção da API da NyTimes -->
+        <section class="blog-post">
+            <h2>Obter Notícias aleatória da</h2>
+            <h2 id="tymes">The New Work Times</h2>
+            <button id="obter-noticia-nytimes">Obter Notícia NyTimes</button>
+            <h3 id="descricao-noticia-nytimes"></h3>
+            <img id="imagem-noticia-nytimes" alt="Imagem da Notícia" style="display:none;">
+            <p id="abstract"></p>
+            <p id="data-publicacao-nytimes"></p>    
+            <a href="" id="fonte_NyTimes"></a>
+        </section>
+
+        <!-- Seção da API da The Guardian -->
+        <section class="blog-post">
+            <h2>Obter Notícias aleatória da <br> The Guardian</h2>
+            <button id="obter-noticia-guardian">Obter Notícia The Guardian</button>
+            <h3 id="descricao-noticia-guardian"></h3>
+            <p id="data-publicacao-guardian"></p>    
+            <a href="" id="fonte_guardian"></a>
+        </section>
+        
+
+       <!-- Seção da API do IBGE -->
+        <section class="blog-post">
+        <h2>Obter Notícias aleatória do  IBGE</h2>
+        <button id="obter-noticia-ibge">Obter Notícia IBGE</button>
+        <h3 id="descricao-noticia"></h3>
+        <p id="introducao"></p>
+        <p id="data-publicacao"></p>
+        <a href="" id="fonte_Ibge"></a>
+        </section>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

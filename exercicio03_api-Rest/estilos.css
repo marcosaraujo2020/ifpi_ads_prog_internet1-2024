@@ -1,0 +1,107 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Chomsky;
+    src: url("Chomsky.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#tymes{
+    font-family: 'Chomsky', Times, serif;
+    font-size: 2em;
+    font-weight: normal;
+    margin-top: 0%;
+}
+
+
+.oculto {
+    display: none;
+}
+
+#erro-endereco{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+   font-style: italic;
+    color: red;
+}
+
+header {
+    background-color: #175bd8;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(118, 75, 222, 0.87);
+}
+
+h1 {
+    margin: 0;
+}
+
+h3{
+    color: #3263bd;
+}
+
+
+#data-publicacao, #data-publicacao-nytimes, #data-publicacao-guardian{
+    font-family: monospace;
+}
+
+#abstract, #introducao{
+    font-style: italic;
+}
+
+a{
+    font-style: italic;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+a:hover{
+    color: red;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.blog-post {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 60vh;
+}
+
+button {
+    background-color: #175bd8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0e43a7;
+}
+
+img {
+    max-width: 60vh;
+    max-height: 60vh;
+    height: auto;
+    margin-top: 1rem;
+    display: block;
+}
